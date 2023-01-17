@@ -55,7 +55,7 @@ namespace tests
                 .WithJsonBody(Match.MinType(new
                 {
                     id = 27,
-                    name = "burger",
+                    name = "burger2",
                     type = "food"
                 }, 1));
 
