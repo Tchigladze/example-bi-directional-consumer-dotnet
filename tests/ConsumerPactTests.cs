@@ -108,7 +108,7 @@ namespace tests
         {
             pact
                 .UponReceiving("a request to retrieve a product id that does not exist")
-                .WithRequest(HttpMethod.Get, "/Products/10")
+                .WithRequest(HttpMethod.Get, "/Products/27")
                 .WillRespond()
                 .WithStatus(System.Net.HttpStatusCode.NotFound)
                 .WithHeader("Content-Type", "application/json; charset=utf-8");
