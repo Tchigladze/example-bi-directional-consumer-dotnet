@@ -108,7 +108,7 @@ namespace tests
         {
             pact
                 .UponReceiving("a request to retrieve a product id that does not exist")
-                .WithRequest(HttpMethod.Get, "/Products/90")
+                .WithRequest(HttpMethod.Get, "/Products/100")
                 .WillRespond()
                 .WithStatus(System.Net.HttpStatusCode.NotFound)
                 .WithHeader("Content-Type", "application/json; charset=utf-8");
@@ -121,7 +121,7 @@ namespace tests
                 var client = new ProductClient();
 
                 //Assert
-                var ex = await Assert.ThrowsAsync<HttpRequestException>(() => client.GetProduct(ctx.MockServerUri.AbsoluteUri, 90, null));
+                var ex = await Assert.ThrowsAsync<HttpRequestException>(() => client.GetProduct(ctx.MockServerUri.AbsoluteUri, 100, null));
                 Assert.Equal("Response status code does not indicate success: 404 (Not Found).", ex.Message);
             });
         }
