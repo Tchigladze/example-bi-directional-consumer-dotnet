@@ -57,7 +57,7 @@ namespace tests
                     id = 27.0,
                     name = "burger",
                     type = "food"
-                }, 1));
+                },1));
 
             //Act
             await pact.VerifyAsync(async ctx =>
@@ -96,7 +96,7 @@ namespace tests
                 var product = await client.GetProduct(ctx.MockServerUri.AbsoluteUri, 27, null);
 
                 //Assert
-                Assert.IsType<int>(product.id);
+                Assert.IsType<double>(product.id);
                 Assert.IsType<string>(product.name);
                 Assert.IsType<string>(product.type);
             });

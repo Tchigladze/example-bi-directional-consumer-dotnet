@@ -2,9 +2,8 @@
 {
     public class Product
     {
-        public int id { get; set; }
+        public double id { get; set; }
         public string type { get; set; }
         public string name { get; set; }
-        public long weight { get; set; }
     }
 }
