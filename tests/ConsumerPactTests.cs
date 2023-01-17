@@ -101,6 +101,7 @@ namespace tests
                 Assert.IsType<int>(product.id);
                 Assert.IsType<string>(product.name);
                 Assert.IsType<string>(product.type);
+                Assert.IsType<long>(product.weight);
             });
         }
 
