@@ -64,12 +64,13 @@ namespace tests
             await pact.VerifyAsync(async ctx =>
             {
                 var client = new ProductClient();
-               var products = await client.GetProducts(ctx.MockServerUri.AbsoluteUri, null);
+                var products = await client.GetProducts(ctx.MockServerUri.AbsoluteUri, null);
 
                 //Assert
                 Assert.IsType<int>(products[0].id);
                 Assert.IsType<string>(products[0].name);
                 Assert.IsType<string>(products[0].type);
+                Assert.IsType<long>(products[0].weight);
             });
             //the mock server is no longer running once VerifyAsync returns
         }
