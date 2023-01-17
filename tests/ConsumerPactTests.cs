@@ -55,8 +55,9 @@ namespace tests
                 .WithJsonBody(Match.MinType(new
                 {
                     id = 27,
-                    name = "burger2",
-                    type = "food"
+                    name = "burger",
+                    type = "food",
+                    weight = 2
                 }, 1));
 
             //Act
@@ -86,7 +87,8 @@ namespace tests
                 {
                     id = Match.Type(27),
                     name = Match.Type("burger"),
-                    type = Match.Type("food")
+                    type = Match.Type("food"),
+                    weight = Match.Type(2)
                 });
 
             //Act
