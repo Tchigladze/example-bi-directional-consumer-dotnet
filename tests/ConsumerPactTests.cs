@@ -54,7 +54,7 @@ namespace tests
                 .WithHeader("Content-Type", "application/json; charset=utf-8")
                 .WithJsonBody(Match.MinType(new
                 {
-                    id = 27,
+                    id = 27.0,
                     name = "burger",
                     type = "food"
                 }, 1));
@@ -66,7 +66,7 @@ namespace tests
                 var products = await client.GetProducts(ctx.MockServerUri.AbsoluteUri, null);
 
                 //Assert
-                Assert.IsType<int>(products[0].id);
+                Assert.IsType<double>(products[0].id);
                 Assert.IsType<string>(products[0].name);
                 Assert.IsType<string>(products[0].type);
             });
@@ -84,7 +84,7 @@ namespace tests
                 .WithHeader("Content-Type", "application/json; charset=utf-8")
                 .WithJsonBody(new
                 {
-                    id = Match.Type(27),
+                    id = Match.Type(27.0),
                     name = Match.Type("burger"),
                     type = Match.Type("food"),
                 });
